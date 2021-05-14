@@ -1,0 +1,36 @@
+name: Test Presentation
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+env:
+  DOTNET_NOLOGO: true
+  DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true
+  DOTNET_CLI_TELEMETRY_OPTOUT: true
+  DOTNET_TRY_CLI_TELEMETRY_OPTOUT: true
+
+jobs:
+  verify_markdown:
+    name: Verify Markdown files
+    runs-on: ubuntu-20.04
+
+    env:
+      NuGet_Configuration_File: ./nuget.config
+      Documentation_Root_Directory: ./presentation
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2.3.4
+    - name: Setup .NET SDK
+      uses: actions/setup-dotnet@v1.8.0
+    - name: Setup .NET SDK
+      uses: actions/setup-dotnet@v1.8.0
+      with:
+        dotnet-version: 3.1.408
+    - name: Install .NET local tools
+      run: dotnet tool restore --configfile ${{ env.NuGet_Configuration_File }}
+    - name: Verify interactive project
+      run: dotnet try verify ${{ env.Documentation_Root_Directory }}
