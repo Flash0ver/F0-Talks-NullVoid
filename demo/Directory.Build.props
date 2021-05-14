@@ -1,0 +1,18 @@
+<Project>
+
+  <PropertyGroup>
+    <IsPackable>false</IsPackable>
+
+    <LangVersion>9.0</LangVersion>
+
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)' == 'Release'">
+<!--    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>-->
+    <WarningsAsErrors>nullable</WarningsAsErrors>
+
+    <WarningsNotAsErrors>$(WarningsNotAsErrors);CS0612;CS0618</WarningsNotAsErrors>
+  </PropertyGroup>
+
+</Project>
