@@ -12,6 +12,7 @@
 * Senior Developer @ [Admiral Sportwetten GmbH](https://www.admiral.ag/)
 
 #### Alter egos
+* dotnetdevsaustria.slack.com: `Stefan Pölz`
 * Twitter: [@0x_F0](https://twitter.com/0x_F0)
 * GitHub: [Flash0ver](https://github.com/Flash0ver)
 * NuGet: [Flash0ver](https://www.nuget.org/profiles/Flash0ver)
