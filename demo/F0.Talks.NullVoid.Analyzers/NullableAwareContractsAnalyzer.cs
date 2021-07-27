@@ -123,7 +123,7 @@ namespace F0.Talks.NullVoid.Analyzers
 			}
 		}
 
-		private static bool TryGetAttribute(ISymbol symbol, INamedTypeSymbol? attributeType, [MaybeNullWhen(false)] out AttributeData attribute)
+		private static bool TryGetAttribute(ISymbol symbol, INamedTypeSymbol? attributeType, [NotNullWhen(true)] out AttributeData? attribute)
 		{
 			ImmutableArray<AttributeData> attributes = symbol.GetAttributes()
 				.Where(symbolAttribute => IsAttribute(symbolAttribute, attributeType))
