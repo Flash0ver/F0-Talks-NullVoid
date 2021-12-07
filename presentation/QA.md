@@ -13,7 +13,7 @@ https://github.com/Flash0ver/F0-Talks-NullVoid
 * Stack Overflow: [FlashOver](https://stackoverflow.com/users/10167996/flashover)
 * LinkedIn: [Stefan Pölz](https://www.linkedin.com/in/stefan-pölz-068a271a1/)
 * Sessionize: [FlashOver](https://sessionize.com/FlashOver)
-* dotnetdevsaustria.slack.com: `Stefan Pölz`
+* dotnetnortherners.slack.com: `Stefan Pölz`
 
 ---
 #### [Exit](./Exit.md)

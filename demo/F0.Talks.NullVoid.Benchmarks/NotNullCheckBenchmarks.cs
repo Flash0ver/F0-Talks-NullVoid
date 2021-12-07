@@ -42,6 +42,10 @@ namespace F0.Talks.NullVoid.Benchmarks
 		public bool IsExpression()
 			=> record is object;
 
+		[Benchmark(Description = "record is Record")]
+		public bool TypePattern()
+			=> record is Record;
+
 		[Benchmark(Description = "record is { }")]
 		public bool RecursivePattern()
 			=> record is { };

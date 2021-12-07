@@ -49,5 +49,6 @@ Not a null test
 #### References
 - [Nullable Reference Types](https://github.com/dotnet/roslyn/blob/main/docs/features/nullable-reference-types.md)
 - [How null checks have changed in C#](https://www.youtube.com/watch?v=lRUfRlp5BXc)
+- [When is not null not null but checking not null in .NET 6](https://adamstorr.azurewebsites.net/blog/when-is-not-null-not-null-but-checking-not-null-in-net6.0)
 
 #### [TOC](./TOC.md)

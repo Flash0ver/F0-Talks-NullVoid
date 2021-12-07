@@ -45,7 +45,10 @@ Optimizations
 - if no `NullableAttribute`, then nearest `NullableContextAttribute` is used
 - if no `NullableContextAttribute` in hierarchy, missing `NullableAttribute` treated as `NullableAttribute(0)`
 
-Planned API for _.NET 6.0_
+_.NET 6.0_ API [api-diff](https://github.com/dotnet/core/blob/main/release-notes/6.0/api-diff/.Net/6.0.0_System.Reflection.md)
+- [NullabilityInfoContext](https://docs.microsoft.com/en-us/dotnet/api/system.reflection.nullabilityinfocontext)
+- [NullabilityInfo](https://docs.microsoft.com/en-us/dotnet/api/system.reflection.nullabilityinfo)
+- [NullabilityState](https://docs.microsoft.com/en-us/dotnet/api/system.reflection.nullabilitystate)
 
 ---
 #### Demos

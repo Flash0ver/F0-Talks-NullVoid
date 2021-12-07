@@ -18,7 +18,7 @@ namespace F0.Talks.NullVoid.Library
 		bool ILogger.IsEnabled(LogLevel logLevel)
 			=> false;
 
-		void ILogger.Log<TState>(LogLevel logLevel, EventId eventId, TState state, Exception exception, Func<TState, Exception, string> formatter)
+		void ILogger.Log<TState>(LogLevel logLevel, EventId eventId, TState state, Exception? exception, Func<TState, Exception?, string> formatter)
 		{
 			//no-op
 		}
