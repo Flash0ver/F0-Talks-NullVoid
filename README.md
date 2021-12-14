@@ -3,6 +3,11 @@ My talk on Everything about Nothing in .NET (C#).
 
 ## Events
 
+### Dot Net North - December 2021 Meetup (2021-12-07)
+- [Organizer site](https://dotnetnorth.org.uk/)
+- [Meetup page](https://www.meetup.com/DotNetNorth/events/282377697/)
+- [Recording](https://www.youtube.com/watch?v=V08poPZTYwI)
+
 ### DotNetDevs.at July 2021 Meetup (2021-07-27)
 - [Organizer site](https://dotnetdevs.at/)
 - [Meetup page](https://www.meetup.com/dotnet-austria/events/279531287/)
