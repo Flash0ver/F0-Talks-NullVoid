@@ -3,7 +3,12 @@ My talk on Everything about Nothing in .NET (C#).
 
 ## Null & Void - Everything about Nothing in .NET
 
-### .NET South West (2021-12-14)
+### dotnetsheff - January 2022 Meetup (2022-01-19)
+- [Organizer site](https://dotnetsheff.co.uk/)
+- [Meetup page](https://www.meetup.com/dotnetsheff/events/283070809/)
+- [Recording](https://www.youtube.com/watch?v=SSEp_JgAt1E)
+
+### .NET South West - December 2021 Meetup (2021-12-14)
 - [Organizer site](https://www.meetup.com/dotnetsouthwest/)
 - [Meetup page](https://www.meetup.com/dotnetsouthwest/events/279821093/)
 - Recording: not available

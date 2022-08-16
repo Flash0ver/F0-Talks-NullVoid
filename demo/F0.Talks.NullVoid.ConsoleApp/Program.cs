@@ -1,7 +1,7 @@
 using System;
 using F0.Talks.NullVoid.ConsoleApp;
 
-Console.WriteLine("Hello, .NET South West!");
+Console.WriteLine("Hello, dotnetsheff!");
 Console.WriteLine();
 
 //await NullableMetadataExample.InvokeAsync<Class>();
