@@ -1,7 +1,12 @@
 # F0-Talks-NullVoid
 My talk on Everything about Nothing in .NET (C#).
 
-## Events
+## Null & Void - Everything about Nothing in .NET
+
+### .NET South West (2021-12-14)
+- [Organizer site](https://www.meetup.com/dotnetsouthwest/)
+- [Meetup page](https://www.meetup.com/dotnetsouthwest/events/279821093/)
+- Recording: not available
 
 ### Dot Net North - December 2021 Meetup (2021-12-07)
 - [Organizer site](https://dotnetnorth.org.uk/)
@@ -11,7 +16,7 @@ My talk on Everything about Nothing in .NET (C#).
 ### DotNetDevs.at July 2021 Meetup (2021-07-27)
 - [Organizer site](https://dotnetdevs.at/)
 - [Meetup page](https://www.meetup.com/dotnet-austria/events/279531287/)
-- Recording: n/a
+- [Recording](https://www.youtube.com/watch?v=pXTxSwNgukk)
 
 ### JetBrains .NET Days Online 2021 (2021-05-11 – 2021-05-12)
 - [Event page](https://pages.jetbrains.com/dotnet-days-2021/)
