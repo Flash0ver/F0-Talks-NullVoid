@@ -3,6 +3,11 @@ My talk on Everything about Nothing in .NET (C#).
 
 ## Null & Void - Everything about Nothing in .NET
 
+### DWX 2022 - Developer Week 2022 (2022-07-07)
+- Location: _Nürnberg Convention Center NCC Ost_
+- [DWX - Developer Week](https://www.developer-week.de/)
+- [Speaker](https://www.developer-week.de/history/speaker-2022#/speaker/17094-stefan-polz)
+
 ### dotnetsheff - January 2022 Meetup (2022-01-19)
 - [Organizer site](https://dotnetsheff.co.uk/)
 - [Meetup page](https://www.meetup.com/dotnetsheff/events/283070809/)

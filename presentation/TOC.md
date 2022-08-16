@@ -17,3 +17,5 @@ Null & Void - Everything about Nothing in .NET
 
 ---
 #### [Q & A](./QA.md)
+
+#### [https://github.com/Flash0ver/F0-Talks-NullVoid](https://github.com/Flash0ver/F0-Talks-NullVoid)
