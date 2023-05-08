@@ -9,9 +9,13 @@
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)' == 'Release'">
-<!--    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>-->
-    <WarningsAsErrors>nullable</WarningsAsErrors>
+    <!-- <TreatWarningsAsErrors>true</TreatWarningsAsErrors> -->
+    <!-- <WarningsAsErrors>$(WarningsAsErrors);nullable</WarningsAsErrors> -->
+    <!-- <WarningsAsErrors Condition="'$(Configuration)' != 'Debug'">$(WarningsAsErrors);Nullable</WarningsAsErrors> -->
+    <WarningsAsErrors>$(WarningsAsErrors);Nullable</WarningsAsErrors>
 
+    <!-- <NoWarn>$(NoWarn);nullable</NoWarn> -->
+    <NoWarn Condition="!$([MSBuild]::IsTargetFrameworkCompatible('$(TargetFramework)', 'netstandard2.1'))">$(NoWarn);nullable</NoWarn>
     <WarningsNotAsErrors>$(WarningsNotAsErrors);CS0612;CS0618</WarningsNotAsErrors>
   </PropertyGroup>
 
