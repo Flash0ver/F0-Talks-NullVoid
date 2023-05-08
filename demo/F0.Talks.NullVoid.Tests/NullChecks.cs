@@ -6,7 +6,7 @@ using Xunit;
 
 namespace F0.Talks.NullVoid.Tests
 {
-	internal record Record(int Number, string Text);
+	internal record class Record(int Number, string Text);
 
 	[System.Diagnostics.CodeAnalysis.SuppressMessage("BestPractice", "F01001:Prefer is pattern to check for null", Justification = "Example")]
 	[System.Diagnostics.CodeAnalysis.SuppressMessage("BestPractice", "F01002:Prefer is pattern to check for null", Justification = "Example")]
@@ -114,6 +114,7 @@ namespace F0.Talks.NullVoid.Tests
 			_ = comparer.Equals(instance, null);
 		}
 
+#if HAS_REFERENCE_EQUALITY_COMPARER
 		[Fact]
 		public void Identity()
 		{
@@ -124,6 +125,7 @@ namespace F0.Talks.NullVoid.Tests
 			_ = Object.Equals(instance, null);
 			_ = comparer.Equals(instance, null);
 		}
+#endif
 	}
 
 	internal class Class : IEquatable<Class>

@@ -8,7 +8,7 @@ using System.Runtime.Serialization;
 namespace F0.Talks.NullVoid.Tests.Contracts
 {
 	[DataContract]
-	public record Message
+	public record class Message
 	{
 		public Guid Id { get; init; }
 

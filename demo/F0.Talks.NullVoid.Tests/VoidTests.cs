@@ -23,6 +23,6 @@ namespace F0.Talks.NullVoid.Tests
 			returnType.Should().Be(typeof(void));
 		}
 
-		private record Record(int Number, string Text);
+		private record class Record(int Number, string Text);
 	}
 }
