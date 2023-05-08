@@ -1,19 +1,18 @@
 // Copyright (c) .NET Foundation and contributors. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
-using System;
 using Snippets.Code;
 
 namespace Snippets
 {
-	public class Program
+	public static class Program
 	{
-		static void Main(
-			string region = null,
-			string session = null,
-			string package = null,
-			string project = null,
-			string[] args = null)
+		private static void Main(
+			string? region = null,
+			string? session = null,
+			string? package = null,
+			string? project = null,
+			string[]? args = null)
 		{
 			#region Main
 			switch (region)
