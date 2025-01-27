@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>net9.0</TargetFramework>
     <!--<TargetFramework>netstandard2.0</TargetFramework>-->
-    <!--<TargetFrameworks>netstandard2.0;net9.0</TargetFrameworks>-->
+    <!--<TargetFrameworks>net9.0;netstandard2.0</TargetFrameworks>-->
 
     <LangVersion>13.0</LangVersion>
 
@@ -18,7 +18,9 @@
     <PackageReference Include="F0.Analyzers" PrivateAssets="all" />
   </ItemGroup>
 
-
+  <ItemGroup>
+    <PackageReference Include="PolySharp" PrivateAssets="all" />
+  </ItemGroup>
 
 <!--  https://github.com/manuelroemer/Nullable-->
 <!--  <PropertyGroup Condition="'$(TargetFramework)' == 'netstandard2.0'">-->
