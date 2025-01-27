@@ -5,23 +5,22 @@ using System.Runtime.Serialization;
 #nullable enable annotations
 #nullable disable warnings
 
-namespace F0.Talks.NullVoid.Tests.Contracts
+namespace F0.Talks.NullVoid.Tests.Contracts;
+
+[DataContract]
+public record class Message
 {
-	[DataContract]
-	public record class Message
-	{
-		public Guid Id { get; init; }
+	public Guid Id { get; init; }
 
-		[DataMember(IsRequired = true)]
-		public string RequiredText { get; init; }
+	[DataMember(IsRequired = true)]
+	public string RequiredText { get; init; }
 
-		[DataMember(IsRequired = false)]
-		public string? OptionalText { get; init; }
+	[DataMember(IsRequired = false)]
+	public string? OptionalText { get; init; }
 
-		[DataMember(IsRequired = true)]
-		public int RequiredNumber { get; init; }
+	[DataMember(IsRequired = true)]
+	public int RequiredNumber { get; init; }
 
-		[DataMember(IsRequired = false)]
-		public int? OptionalNumber { get; init; }
-	}
+	[DataMember(IsRequired = false)]
+	public int? OptionalNumber { get; init; }
 }

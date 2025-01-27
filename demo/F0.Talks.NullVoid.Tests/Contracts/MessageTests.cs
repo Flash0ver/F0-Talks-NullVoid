@@ -3,58 +3,57 @@ using FluentAssertions;
 using Newtonsoft.Json;
 using Xunit;
 
-namespace F0.Talks.NullVoid.Tests.Contracts
+namespace F0.Talks.NullVoid.Tests.Contracts;
+
+public class MessageTests
 {
-	public class MessageTests
+	[Fact]
+	public void Serialize()
 	{
-		[Fact]
-		public void Serialize()
+		Message message = new()
 		{
-			Message message = new()
+			Id = Guid.Empty,
+			RequiredText = "Null & Void",
+			OptionalText = null,
+			RequiredNumber = 0x_F0,
+			OptionalNumber = null,
+		};
+
+		string actual = JsonConvert.SerializeObject(message, Formatting.Indented);
+
+		string expected = """
 			{
-				Id = Guid.Empty,
-				RequiredText = "Null & Void",
-				OptionalText = null,
-				RequiredNumber = 0x_F0,
-				OptionalNumber = null,
-			};
+			  "RequiredText": "Null & Void",
+			  "OptionalText": null,
+			  "RequiredNumber": 240,
+			  "OptionalNumber": null
+			}
+			""";
 
-			string actual = JsonConvert.SerializeObject(message, Formatting.Indented);
+		actual.Should().Be(expected);
+	}
 
-			string expected = """
-				{
-				  "RequiredText": "Null & Void",
-				  "OptionalText": null,
-				  "RequiredNumber": 240,
-				  "OptionalNumber": null
-				}
-				""";
+	[Fact]
+	public void Deserialize()
+	{
+		string json = """
+			{
+			  "RequiredText": "Null & Void",
+			  "RequiredNumber": 240
+			}
+			""";
 
-			actual.Should().Be(expected);
-		}
+		Message? actual = JsonConvert.DeserializeObject<Message>(json);
 
-		[Fact]
-		public void Deserialize()
+		Message expected = new()
 		{
-			string json = """
-				{
-				  "RequiredText": "Null & Void",
-				  "RequiredNumber": 240
-				}
-				""";
+			Id = Guid.Empty,
+			RequiredText = "Null & Void",
+			OptionalText = null,
+			RequiredNumber = 0x_F0,
+			OptionalNumber = null,
+		};
 
-			Message? actual = JsonConvert.DeserializeObject<Message>(json);
-
-			Message expected = new()
-			{
-				Id = Guid.Empty,
-				RequiredText = "Null & Void",
-				OptionalText = null,
-				RequiredNumber = 0x_F0,
-				OptionalNumber = null,
-			};
-
-			actual.Should().Be(expected);
-		}
+		actual.Should().Be(expected);
 	}
 }

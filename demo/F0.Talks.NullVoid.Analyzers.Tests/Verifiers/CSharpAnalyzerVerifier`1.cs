@@ -6,29 +6,28 @@ using Microsoft.CodeAnalysis.Diagnostics;
 using Microsoft.CodeAnalysis.Testing;
 using Microsoft.CodeAnalysis.Testing.Verifiers;
 
-namespace F0.Talks.NullVoid.Analyzers.Tests.Verifiers
+namespace F0.Talks.NullVoid.Analyzers.Tests.Verifiers;
+
+public static partial class CSharpAnalyzerVerifier<TAnalyzer>
+	where TAnalyzer : DiagnosticAnalyzer, new()
 {
-	public static partial class CSharpAnalyzerVerifier<TAnalyzer>
-		where TAnalyzer : DiagnosticAnalyzer, new()
+	public static DiagnosticResult Diagnostic()
+		=> CSharpAnalyzerVerifier<TAnalyzer, XUnitVerifier>.Diagnostic();
+
+	public static DiagnosticResult Diagnostic(string diagnosticId)
+		=> CSharpAnalyzerVerifier<TAnalyzer, XUnitVerifier>.Diagnostic(diagnosticId);
+
+	public static DiagnosticResult Diagnostic(DiagnosticDescriptor descriptor)
+		=> CSharpAnalyzerVerifier<TAnalyzer, XUnitVerifier>.Diagnostic(descriptor);
+
+	public static async Task VerifyAnalyzerAsync(string source, params DiagnosticResult[] expected)
 	{
-		public static DiagnosticResult Diagnostic()
-			=> CSharpAnalyzerVerifier<TAnalyzer, XUnitVerifier>.Diagnostic();
-
-		public static DiagnosticResult Diagnostic(string diagnosticId)
-			=> CSharpAnalyzerVerifier<TAnalyzer, XUnitVerifier>.Diagnostic(diagnosticId);
-
-		public static DiagnosticResult Diagnostic(DiagnosticDescriptor descriptor)
-			=> CSharpAnalyzerVerifier<TAnalyzer, XUnitVerifier>.Diagnostic(descriptor);
-
-		public static async Task VerifyAnalyzerAsync(string source, params DiagnosticResult[] expected)
+		Test test = new()
 		{
-			Test test = new()
-			{
-				TestCode = source,
-			};
+			TestCode = source,
+		};
 
-			test.ExpectedDiagnostics.AddRange(expected);
-			await test.RunAsync(CancellationToken.None);
-		}
+		test.ExpectedDiagnostics.AddRange(expected);
+		await test.RunAsync(CancellationToken.None);
 	}
 }
