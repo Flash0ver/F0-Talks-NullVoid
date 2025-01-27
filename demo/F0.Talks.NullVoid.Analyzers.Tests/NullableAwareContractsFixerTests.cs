@@ -11,51 +11,55 @@ namespace F0.Talks.NullVoid.Analyzers.Tests
 		[Fact]
 		public async Task WithDataContractAttribute_FixWrongAnnotations()
 		{
-			const string source = @"using System;
-using System.Runtime.Serialization;
+			const string source = """
+				using System;
+				using System.Runtime.Serialization;
 
-#nullable enable annotations
+				#nullable enable annotations
 
-[DataContract]
-public class Message
-{
-	public Guid Id { get; set; }
-	{|#0:[DataMember(IsRequired = true)]
-	public string? RequiredText { get; set; }|}
-	{|#1:[DataMember(IsRequired = false)]
-	public string OptionalText { get; set; }|}
-	{|#2:[DataMember(IsRequired = true)]
-	public int? RequiredNumber { get; set; }|}
-	{|#3:[DataMember(IsRequired = false)]
-	public int OptionalNumber { get; set; }|}
-}";
+				[DataContract]
+				public class Message
+				{
+					public Guid Id { get; set; }
+					{|#0:[DataMember(IsRequired = true)]
+					public string? RequiredText { get; set; }|}
+					{|#1:[DataMember(IsRequired = false)]
+					public string OptionalText { get; set; }|}
+					{|#2:[DataMember(IsRequired = true)]
+					public int? RequiredNumber { get; set; }|}
+					{|#3:[DataMember(IsRequired = false)]
+					public int OptionalNumber { get; set; }|}
+				}
+				""";
 
-			const string fixedSource = @"using System;
-using System.Runtime.Serialization;
+			const string fixedSource = """
+				using System;
+				using System.Runtime.Serialization;
 
-#nullable enable annotations
+				#nullable enable annotations
 
-[DataContract]
-public class Message
-{
-	public Guid Id { get; set; }
-	[DataMember(IsRequired = true)]
-	public string RequiredText { get; set; }
-	[DataMember(IsRequired = false)]
-	public string? OptionalText { get; set; }
-	[DataMember(IsRequired = true)]
-	public int RequiredNumber { get; set; }
-	[DataMember(IsRequired = false)]
-	public int? OptionalNumber { get; set; }
-}";
+				[DataContract]
+				public class Message
+				{
+					public Guid Id { get; set; }
+					[DataMember(IsRequired = true)]
+					public string RequiredText { get; set; }
+					[DataMember(IsRequired = false)]
+					public string? OptionalText { get; set; }
+					[DataMember(IsRequired = true)]
+					public int RequiredNumber { get; set; }
+					[DataMember(IsRequired = false)]
+					public int? OptionalNumber { get; set; }
+				}
+				""";
 
 			DiagnosticResult[] expected =
-			{
+			[
 				CreateDiagnostic(0, "RequiredText"),
 				CreateDiagnostic(1, "OptionalText"),
 				CreateDiagnostic(2, "RequiredNumber"),
 				CreateDiagnostic(3, "OptionalNumber"),
-			};
+			];
 
 			await VerifyAsync(source, expected, fixedSource);
 		}

@@ -12,25 +12,27 @@ namespace F0.Talks.NullVoid.Analyzers.Tests
 		[Fact]
 		public async Task NoDataContractAttribute_NoDiagnosticsOnDataMembers()
 		{
-			const string source = @"using System;
-using System.Runtime.Serialization;
+			const string source = """
+				using System;
+				using System.Runtime.Serialization;
 
-#nullable enable annotations
+				#nullable enable annotations
 
-public class Message
-{
-	public Guid Id { get; set; }
-	[DataMember(IsRequired = true)]
-	public string? RequiredText { get; set; }
-	[DataMember(IsRequired = false)]
-	public string OptionalText { get; set; }
-	[DataMember(IsRequired = true)]
-	public int? RequiredNumber { get; set; }
-	[DataMember(IsRequired = false)]
-	public int OptionalNumber { get; set; }
-}";
+				public class Message
+				{
+					public Guid Id { get; set; }
+					[DataMember(IsRequired = true)]
+					public string? RequiredText { get; set; }
+					[DataMember(IsRequired = false)]
+					public string OptionalText { get; set; }
+					[DataMember(IsRequired = true)]
+					public int? RequiredNumber { get; set; }
+					[DataMember(IsRequired = false)]
+					public int OptionalNumber { get; set; }
+				}
+				""";
 
-			DiagnosticResult[] expected = Array.Empty<DiagnosticResult>();
+			DiagnosticResult[] expected = [];
 
 			await VerifyAsync(source, expected);
 		}
@@ -38,24 +40,26 @@ public class Message
 		[Fact]
 		public async Task NoNullableContext_NoDiagnosticsOnDataMembers()
 		{
-			const string source = @"using System;
-using System.Runtime.Serialization;
+			const string source = """
+				using System;
+				using System.Runtime.Serialization;
 
-[DataContract]
-public class Message
-{
-	public Guid Id { get; set; }
-	[DataMember(IsRequired = true)]
-	public string RequiredText { get; set; }
-	[DataMember(IsRequired = false)]
-	public string OptionalText { get; set; }
-	[DataMember(IsRequired = true)]
-	public int? RequiredNumber { get; set; }
-	[DataMember(IsRequired = false)]
-	public int OptionalNumber { get; set; }
-}";
+				[DataContract]
+				public class Message
+				{
+					public Guid Id { get; set; }
+					[DataMember(IsRequired = true)]
+					public string RequiredText { get; set; }
+					[DataMember(IsRequired = false)]
+					public string OptionalText { get; set; }
+					[DataMember(IsRequired = true)]
+					public int? RequiredNumber { get; set; }
+					[DataMember(IsRequired = false)]
+					public int OptionalNumber { get; set; }
+				}
+				""";
 
-			DiagnosticResult[] expected = Array.Empty<DiagnosticResult>();
+			DiagnosticResult[] expected = [];
 
 			await VerifyAsync(source, expected);
 		}
@@ -63,32 +67,34 @@ public class Message
 		[Fact]
 		public async Task WithDataContractAttribute_ReportDiagnosticsOnDataMembers()
 		{
-			const string source = @"using System;
-using System.Runtime.Serialization;
+			const string source = """
+				using System;
+				using System.Runtime.Serialization;
 
-#nullable enable annotations
+				#nullable enable annotations
 
-[DataContract]
-public class Message
-{
-	public Guid Id { get; set; }
-	{|#0:[DataMember(IsRequired = true)]
-	public string? RequiredText { get; set; }|}
-	{|#1:[DataMember(IsRequired = false)]
-	public string OptionalText { get; set; }|}
-	{|#2:[DataMember(IsRequired = true)]
-	public int? RequiredNumber { get; set; }|}
-	{|#3:[DataMember(IsRequired = false)]
-	public int OptionalNumber { get; set; }|}
-}";
+				[DataContract]
+				public class Message
+				{
+					public Guid Id { get; set; }
+					{|#0:[DataMember(IsRequired = true)]
+					public string? RequiredText { get; set; }|}
+					{|#1:[DataMember(IsRequired = false)]
+					public string OptionalText { get; set; }|}
+					{|#2:[DataMember(IsRequired = true)]
+					public int? RequiredNumber { get; set; }|}
+					{|#3:[DataMember(IsRequired = false)]
+					public int OptionalNumber { get; set; }|}
+				}
+				""";
 
 			DiagnosticResult[] expected =
-			{
+			[
 				CreateDiagnostic(0, "RequiredText"),
 				CreateDiagnostic(1, "OptionalText"),
 				CreateDiagnostic(2, "RequiredNumber"),
 				CreateDiagnostic(3, "OptionalNumber"),
-			};
+			];
 
 			await VerifyAsync(source, expected);
 		}
@@ -96,26 +102,28 @@ public class Message
 		[Fact]
 		public async Task WithNullableAnnotations_NoDiagnosticsOnDataMembers()
 		{
-			const string source = @"using System;
-using System.Runtime.Serialization;
+			const string source = """
+				using System;
+				using System.Runtime.Serialization;
 
-#nullable enable annotations
+				#nullable enable annotations
 
-[DataContract]
-public class Message
-{
-	public Guid Id { get; set; }
-	[DataMember(IsRequired = true)]
-	public string RequiredText { get; set; }
-	[DataMember(IsRequired = false)]
-	public string? OptionalText { get; set; }
-	[DataMember(IsRequired = true)]
-	public int RequiredNumber { get; set; }
-	[DataMember(IsRequired = false)]
-	public int? OptionalNumber { get; set; }
-}";
+				[DataContract]
+				public class Message
+				{
+					public Guid Id { get; set; }
+					[DataMember(IsRequired = true)]
+					public string RequiredText { get; set; }
+					[DataMember(IsRequired = false)]
+					public string? OptionalText { get; set; }
+					[DataMember(IsRequired = true)]
+					public int RequiredNumber { get; set; }
+					[DataMember(IsRequired = false)]
+					public int? OptionalNumber { get; set; }
+				}
+				""";
 
-			DiagnosticResult[] expected = Array.Empty<DiagnosticResult>();
+			DiagnosticResult[] expected = [];
 
 			await VerifyAsync(source, expected);
 		}

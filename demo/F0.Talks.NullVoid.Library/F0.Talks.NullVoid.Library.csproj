@@ -1,11 +1,11 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
-<!--    <TargetFramework>netstandard2.0</TargetFramework>-->
-<!--    <TargetFrameworks>netstandard2.0;net6.0</TargetFrameworks>-->
+    <TargetFramework>net9.0</TargetFramework>
+    <!--<TargetFramework>netstandard2.0</TargetFramework>-->
+    <!--<TargetFrameworks>netstandard2.0;net9.0</TargetFrameworks>-->
 
-    <LangVersion>10.0</LangVersion>
+    <LangVersion>13.0</LangVersion>
 
     <Nullable>enable</Nullable>
   </PropertyGroup>
@@ -38,7 +38,7 @@
 
 <!--  <ItemGroup>-->
 <!--    <PackageReference Include="TunnelVisionLabs.ReferenceAssemblyAnnotator" PrivateAssets="all" />-->
-<!--    <PackageDownload Include="Microsoft.NETCore.App.Ref" Version="[6.0.0]" />-->
+<!--    <PackageDownload Include="Microsoft.NETCore.App.Ref" Version="[9.0.0]" />-->
 <!--  </ItemGroup>-->
 
 </Project>

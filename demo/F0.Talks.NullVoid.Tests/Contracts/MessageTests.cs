@@ -21,12 +21,14 @@ namespace F0.Talks.NullVoid.Tests.Contracts
 
 			string actual = JsonConvert.SerializeObject(message, Formatting.Indented);
 
-			string expected = @"{
-  ""RequiredText"": ""Null & Void"",
-  ""OptionalText"": null,
-  ""RequiredNumber"": 240,
-  ""OptionalNumber"": null
-}";
+			string expected = """
+				{
+				  "RequiredText": "Null & Void",
+				  "OptionalText": null,
+				  "RequiredNumber": 240,
+				  "OptionalNumber": null
+				}
+				""";
 
 			actual.Should().Be(expected);
 		}
@@ -34,10 +36,12 @@ namespace F0.Talks.NullVoid.Tests.Contracts
 		[Fact]
 		public void Deserialize()
 		{
-			string json = @"{
-  ""RequiredText"": ""Null & Void"",
-  ""RequiredNumber"": 240
-}";
+			string json = """
+				{
+				  "RequiredText": "Null & Void",
+				  "RequiredNumber": 240
+				}
+				""";
 
 			Message? actual = JsonConvert.DeserializeObject<Message>(json);
 
