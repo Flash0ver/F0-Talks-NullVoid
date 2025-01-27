@@ -37,7 +37,7 @@ public class Precondition_AllowNull
 
 	public void Example2()
 	{
-		HttpResponseMessage message = new();
+		using HttpResponseMessage message = new();
 
 		//[AllowNull]
 		message.Content = null;

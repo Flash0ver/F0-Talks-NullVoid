@@ -23,5 +23,5 @@ public class VoidTests
 		returnType.Should().Be(typeof(void));
 	}
 
-	private record class Record(int Number, string Text);
+	private sealed record class Record(int Number, string Text);
 }

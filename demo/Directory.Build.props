@@ -6,17 +6,40 @@
     <LangVersion>13.0</LangVersion>
 
     <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)' == 'Release'">
     <!-- <TreatWarningsAsErrors>true</TreatWarningsAsErrors> -->
-    <!-- <WarningsAsErrors>$(WarningsAsErrors);nullable</WarningsAsErrors> -->
-    <!-- <WarningsAsErrors Condition="'$(Configuration)' != 'Debug'">$(WarningsAsErrors);Nullable</WarningsAsErrors> -->
-    <WarningsAsErrors>$(WarningsAsErrors);Nullable</WarningsAsErrors>
+    <WarningsAsErrors>$(WarningsAsErrors);nullable</WarningsAsErrors>
+    <!-- <WarningsAsErrors Condition="'$(Configuration)' != 'Debug'">$(WarningsAsErrors);nullable</WarningsAsErrors> -->
 
     <!-- <NoWarn>$(NoWarn);nullable</NoWarn> -->
-    <NoWarn Condition="!$([MSBuild]::IsTargetFrameworkCompatible('$(TargetFramework)', 'netstandard2.1'))">$(NoWarn);nullable</NoWarn>
+    <!-- <NoWarn Condition="!$([MSBuild]::IsTargetFrameworkCompatible('$(TargetFramework)', 'netstandard2.1'))">$(NoWarn);nullable</NoWarn> -->
     <WarningsNotAsErrors>$(WarningsNotAsErrors);CS0612;CS0618</WarningsNotAsErrors>
   </PropertyGroup>
+
+  <PropertyGroup>
+    <EnableNETAnalyzers>true</EnableNETAnalyzers>
+    <AnalysisLevel>9.0</AnalysisLevel>
+    <AnalysisMode>All</AnalysisMode>
+    <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <UseArtifactsOutput>true</UseArtifactsOutput>
+    <ArtifactsPath>$(MSBuildThisFileDirectory)../artifacts</ArtifactsPath>
+  </PropertyGroup>
+
+  <!--
+  <PropertyGroup Condition="'$(Configuration)'=='Debug'">
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)'=='Release'">
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <WarningsNotAsErrors>$(WarningsNotAsErrors);CS0612;CS0618;CS1030</WarningsNotAsErrors>
+  </PropertyGroup>
+  -->
 
 </Project>

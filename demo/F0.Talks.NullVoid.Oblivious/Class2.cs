@@ -4,9 +4,9 @@ using System.Threading.Tasks;
 
 namespace F0.Talks.NullVoid.Oblivious
 {
-	internal class Class2
+	internal sealed class Class2
 	{
-		private string field;
+		private readonly string field;
 
 		public Class2(string value)
 		{

@@ -6,7 +6,7 @@ using Xunit;
 
 namespace F0.Talks.NullVoid.Tests;
 
-internal record class Record(int Number, string Text);
+internal sealed record class Record(int Number, string Text);
 
 [System.Diagnostics.CodeAnalysis.SuppressMessage("BestPractice", "F01001:Prefer is pattern to check for null", Justification = "Example")]
 [System.Diagnostics.CodeAnalysis.SuppressMessage("BestPractice", "F01002:Prefer is pattern to check for null", Justification = "Example")]
@@ -128,7 +128,7 @@ public class MoreNullChecks
 #endif
 }
 
-internal class Class : IEquatable<Class>
+internal sealed class Class : IEquatable<Class>
 {
 	public int Number { get; init; }
 	public int Text { get; init; }
