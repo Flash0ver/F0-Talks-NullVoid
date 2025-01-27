@@ -1,0 +1,83 @@
+is_global = true
+
+# CA1000: Do not declare static members on generic types
+dotnet_diagnostic.CA1000.severity = none
+
+# CA1062: Validate arguments of public methods
+dotnet_diagnostic.CA1062.severity = error
+dotnet_diagnostic.CA1062.severity = none
+
+# CA1303: Do not pass literals as localized parameters
+dotnet_diagnostic.CA1303.severity = none
+
+# CA1515: Consider making public types internal
+dotnet_diagnostic.CA1515.severity = none
+
+# CA1707: Identifiers should not contain underscores
+dotnet_diagnostic.CA1707.severity = none
+
+# CA1716: Identifiers should not match keywords
+dotnet_diagnostic.CA1716.severity = none
+
+# CA1822: Mark members as static
+dotnet_diagnostic.CA1822.severity = none
+
+# CA1849: Call async methods when in an async method
+dotnet_diagnostic.CA1849.severity = none
+
+# CA1859: Use concrete types when possible for improved performance
+dotnet_diagnostic.CA1859.severity = none
+
+# CA2007: Consider calling ConfigureAwait on the awaited task
+dotnet_diagnostic.CA2007.severity = none
+
+# IDE0008: Use explicit type
+dotnet_diagnostic.IDE0008.severity = none
+
+# IDE0017: Simplify object initialization
+dotnet_diagnostic.IDE0017.severity = none
+
+# IDE0021: Use expression body for constructor
+dotnet_diagnostic.IDE0021.severity = none
+
+# IDE0022: Use expression body for method
+dotnet_diagnostic.IDE0022.severity = none
+
+# IDE0041: Use 'is null' check
+dotnet_diagnostic.IDE0041.severity = none
+
+# IDE0045: Convert to conditional expression
+dotnet_diagnostic.IDE0045.severity = none
+
+# IDE0052: Remove unread private members
+dotnet_diagnostic.IDE0052.severity = none
+
+# IDE0055: Fix formatting
+dotnet_diagnostic.IDE0055.severity = none
+
+# IDE0058: Expression value is never used
+dotnet_diagnostic.IDE0058.severity = none
+
+# IDE0059: Unnecessary assignment of a value
+dotnet_diagnostic.IDE0059.severity = none
+
+# IDE0060: Remove unused parameter
+dotnet_diagnostic.IDE0060.severity = none
+
+# IDE0150: Prefer 'null' check over type check
+dotnet_diagnostic.IDE0150.severity = none
+
+# IDE0290: Use primary constructor
+dotnet_diagnostic.IDE0290.severity = none
+
+# IDE0303: Simplify collection initialization
+dotnet_diagnostic.IDE0303.severity = none
+
+# IDE1006: Naming Styles
+dotnet_diagnostic.IDE1006.severity = none
+
+# RS1038: Compiler extensions should be implemented in assemblies with compiler-provided references
+dotnet_diagnostic.RS1038.severity = none
+
+# RS1041: Compiler extensions should be implemented in assemblies targeting netstandard2.0
+dotnet_diagnostic.RS1041.severity = none
