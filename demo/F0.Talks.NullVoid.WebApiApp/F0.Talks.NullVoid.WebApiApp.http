@@ -1,0 +1,41 @@
+@HostAddress = http://localhost:5085
+
+GET {{HostAddress}}/
+Accept: application/json
+
+###
+
+GET {{HostAddress}}/todos/
+Accept: application/json
+
+###
+
+GET {{HostAddress}}/todos/1
+Accept: application/json
+
+###
+
+POST {{HostAddress}}/todos/
+Content-Type: application/json
+
+{
+  "title": "First",
+  "message": null,
+  "isComplete" : false
+}
+
+###
+
+PUT {{HostAddress}}/todos/1
+Content-Type: application/json
+
+{
+  "title": "Updated",
+  "message": "optional",
+  "isComplete" : true
+}
+
+###
+
+DELETE {{HostAddress}}/todos/1
+Accept: application/json

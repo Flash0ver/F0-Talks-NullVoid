@@ -3,6 +3,11 @@ My talk on Everything about Nothing in .NET (C#).
 
 ## Null & Void - Everything about Nothing in .NET
 
+### Techorama Netherlands 2024 - The Fun Fair Edition (2024-10-09)
+- Venue: _Kinepolis Jaarbeurs Utrecht_
+- [Techorama Netherlands](https://www.techorama.nl)
+- [Speaker](https://techorama-2024-netherlands.sessionize.com/speaker/1a8eb8cc-fa0f-401e-b10b-843de142ad69)
+
 ### DWX 2022 - Developer Week 2022 (2022-07-07)
 - Location: _Nürnberg Convention Center NCC Ost_
 - [DWX - Developer Week](https://www.developer-week.de/)
