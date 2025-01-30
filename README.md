@@ -3,6 +3,11 @@ My talk on Everything about Nothing in .NET (C#).
 
 ## Null & Void - Everything about Nothing in .NET
 
+### dotnetsheff - January In-Person event (2025-01-27)
+- Location: _Sheffield Hallam University_
+- [Organizer site](https://dotnetsheff.co.uk/)
+- [Meetup page](https://www.meetup.com/dotnetsheff/events/304904898/)
+
 ### Techorama Netherlands 2024 - The Fun Fair Edition (2024-10-09)
 - Venue: _Kinepolis Jaarbeurs Utrecht_
 - [Techorama Netherlands](https://www.techorama.nl)

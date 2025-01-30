@@ -2,7 +2,7 @@
 ## Everything about Nothing in .NET
 
 ```cs
-Console.WriteLine("Hello, Developer Week '22!");
+Console.WriteLine("Hello, dotnetsheff!");
 ```
 
 ---

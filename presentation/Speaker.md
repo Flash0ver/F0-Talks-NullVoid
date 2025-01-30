@@ -9,10 +9,12 @@
 * C# since 2012
 * .NET since 2013
 * ... nullable-aware ...
-* Senior Developer @ [Admiral Sportwetten GmbH](https://www.admiral.ag/)
+* Lead Software Engineer @ [Tricentis GmbH](https://www.tricentis.com/)
 
 #### Alter egos
-* Twitter: [@0x_F0](https://twitter.com/0x_F0)
+* X (Twitter): [@0x_F0](https://twitter.com/0x_F0)
+* Mastodon: [@0x_F0@dotnet.social](https://dotnet.social/@0x_F0)
+* Bluesky: [@flash0ver.bsky.social](https://bsky.app/profile/flash0ver.bsky.social)
 * GitHub: [Flash0ver](https://github.com/Flash0ver)
 * Twitch: [FlashOWare](https://www.twitch.tv/FlashOWare)
 * NuGet: [Flash0ver](https://www.nuget.org/profiles/Flash0ver)

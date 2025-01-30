@@ -233,7 +233,7 @@ public class ConstructorHelpers_MemberNotNull
 	}
 
 	[MemberNotNull(nameof(_value))]
-	public void Initialize(string value)
+	private void Initialize(string value)
 	{
 		_value = value;
 	}
