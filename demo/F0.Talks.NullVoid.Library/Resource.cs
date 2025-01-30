@@ -1,4 +1,3 @@
-using System;
 // ReSharper disable All
 
 namespace F0.Talks.NullVoid.Library;
